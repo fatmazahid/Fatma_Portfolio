@@ -5,22 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fatma Zahid | Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --accent-color: #2980b9;
+    }
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #f1f1f1;
+      --accent-color: #3498db;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
     }
     header {
-      background: #2c3e50;
+      background: var(--accent-color);
       color: white;
       padding: 2rem;
       text-align: center;
+      position: relative;
     }
-    header h1 { font-size: 2.5rem; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: var(--accent-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
     section {
       padding: 3rem 2rem;
       max-width: 1000px;
@@ -29,33 +75,53 @@
     h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #2c3e50;
+      color: var(--accent-color);
     }
-    ul { list-style: disc; padding-left: 1.5rem; }
-    .project, .contact {
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
       margin-top: 1rem;
+      background: var(--bg-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
     }
     .resume-btn {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.7rem 1.5rem;
-      background: #2c3e50;
+      background: var(--accent-color);
       color: white;
       text-decoration: none;
       border-radius: 5px;
     }
+    .contact a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
     footer {
-      background: #2c3e50;
+      background: var(--accent-color);
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
     }
-    a { color: #2980b9; text-decoration: none; }
   </style>
 </head>
 <body>
   <header>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Dark Mode</button>
+    <img src="https://drive.google.com/uc?id=19jeLaC95_bmbZjRHTiXlF9gvlBcZMrtu" alt="Fatma Zahid">
     <h1>Fatma Zahid</h1>
     <p>Aspiring Data Analyst | Turning Data into Decisions</p>
   </header>
@@ -81,7 +147,7 @@
 
   <section>
     <h2>Projects</h2>
-    <div class="project">
+    <div class="project-card">
       <h3>Online Voting System</h3>
       <p>A secure web-based voting application that allows users to cast votes digitally, ensuring transparency and accuracy in results.</p>
       <p><strong>Tech Used:</strong> Python, Flask, HTML, CSS</p>
@@ -96,8 +162,8 @@
   <section>
     <h2>Contact</h2>
     <div class="contact">
-      <p>Email: <a href="mailto:fatmazahid55@gmail.com">fatmazahid55@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/fatma-zahid-2164bb30b" target="_blank">fatma-zahid-2164bb30b</a></p>
+      <a href="mailto:fatmazahid55@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/fatma-zahid-2164bb30b" target="_blank">💼 LinkedIn</a>
     </div>
   </section>
 
@@ -106,3 +172,4 @@
   </footer>
 </body>
 </html>
+
